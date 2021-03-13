@@ -38,13 +38,17 @@ class Imc{
         return $this->grau;
     }
 
+
     public function setIMC(){
         if($this->peso!=0&&$this->altura!=0){
             $this->imc = $this->imc($this->altura,$this->peso);
             $this->classificacao = $this->imc($this->altura,$this->peso,1);
             $this->grau = $this->imc($this->altura,$this->peso,2);
+
         }
     }
+
+// Calculo do IMC validado conforme padrão e classificações
 
     private function imc($altura,$peso,$tipo=0){
         $imc = $peso/($altura*$altura);
